@@ -8,7 +8,7 @@ class PageController extends Controller
 {
     public function home()
     {
-        return ('Welcome to my page!');
+        return redirect()->route('products.show',['id' =>42]);
     }
 
     public function about()

@@ -8,11 +8,12 @@ Route::get('/hello', function () {
 
 use App\Http\Controllers\PageController;
 
-Route::get('/home', [PageController::class, 'home']);
-Route::get('/about', [PageController::class, 'about']);
+Route::get('/home', [PageController::class, 'home'])
+->name('home');
+Route::get('/about', [PageController::class, 'about'])
+->name('about');
 
 use App\Http\Controllers\ProductController;
 
-Route::get('/products/{id}', function ($id) {
-    return 'product ' .$id;
-});
+Route::get('/products/{id}', [ProductController::class, 'show'])
+->name("products.show");
