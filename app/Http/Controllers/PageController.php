@@ -18,6 +18,11 @@ class PageController extends Controller
 
     public function about()
     {
-        return ('This e-shop is designed for polers who wants high quality polewear.');
+        return view('layouts.about');
+    }
+
+    public function app()
+    {
+        return view('layouts.app');
     }
 }

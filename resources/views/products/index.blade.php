@@ -1,13 +1,11 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.app')
+@section('title', 'Accueil - ShopLaravel')
+@section('content')
+    <h1 class="text-3xl font-bold mb-4">Bienvenue sur PoleWear</h1>
+    <p>Découvrez nos produits exceptionnels !</p>
+
+
 <ul>
-<strong>Boucle foreach</strong>
     @foreach($products as $product)
         <li>{{ $product['identifiant'] }} - {{ $product['name'] }} - {{ $product['price']}} </li>
     @endforeach
@@ -20,6 +18,6 @@
         <p>Aucun produit trouvé.</p>
     @endforelse
 </ul>
-</body>
-</html>
+@endsection
+
 

@@ -12,6 +12,8 @@ Route::get('/home', [PageController::class, 'home'])
 ->name('home');
 Route::get('/about', [PageController::class, 'about'])
 ->name('about');
+Route::get('/app', [PageController::class, 'app'])
+    ->name('app');
 
 use App\Http\Controllers\ProductController;
 
