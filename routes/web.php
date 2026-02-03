@@ -16,4 +16,6 @@ Route::get('/about', [PageController::class, 'about'])
 use App\Http\Controllers\ProductController;
 
 Route::get('/products/{id}', [ProductController::class, 'show'])
-->name("products.show");
+->name('products.show');
+
+

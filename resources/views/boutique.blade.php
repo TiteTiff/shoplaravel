@@ -6,13 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-<h1>{{ $name }}</h1>
-<p>{{ $quantity }}</p>
-@if($shopstate === 'open')
-    <p>Shop is open</p>
-@else
-    <p>Shop is close</p>
-@endif
-<p>{{ $shopstate }}</p>
+
 </body>
 </html>
+

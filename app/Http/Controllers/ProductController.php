@@ -11,3 +11,6 @@ class ProductController extends Controller
         return ("Détails du produit $id");
     }
 }
+
+
+
