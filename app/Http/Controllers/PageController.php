@@ -11,7 +11,7 @@ class PageController extends Controller
         $boutique = [
             'name' => 'PoleWear',
             'quantity' => 10,
-            'shopstate' => 'open'
+            'shopstate' => 'close'
         ];
         return view('hello', $boutique);
     }
