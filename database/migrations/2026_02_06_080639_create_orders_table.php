@@ -35,5 +35,5 @@ return new class extends Migration
             $table->dropColumn('created_at');
             $table->dropColumn('updated_at');
         });
-    }
+        }
 };
