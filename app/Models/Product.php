@@ -4,11 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Product extends Model
 {
-    use HasFactory;
+    //use HasFactory;
     protected $fillable = [
         'name',
         'slug',
@@ -23,8 +22,8 @@ class Product extends Model
         'active' => 'boolean',
     ];
 
-    protected $guarded = [
-        'id',
-        'category_id'
+   protected $guarded = [
+       'id',
+       'category_id'
     ];
 }

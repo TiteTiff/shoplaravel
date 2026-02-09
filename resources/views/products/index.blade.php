@@ -7,16 +7,22 @@
 
 <ul>
     @foreach($products as $product)
-        <li>{{ $product['identifiant'] }} - {{ $product['name'] }} - {{ $product['price']}} </li>
-    @endforeach
+        <li><strong>{{ $product->name}}</strong>
+        <li>Description: {{ $product->description}} </li>
+        <li>Price: {{ $product->price}}€ </li>
+        <li>Stock: {{ $product->stock}} </li>
+@endforeach
 </ul>
 <ul>
 <strong>Boucle forelse</strong>
-    @forelse($products as $product)
-        <li>{{ $product['identifiant'] }} - {{ $product['name'] }} - {{ $product['price']}} </li>
-    @empty
-        <p>Aucun produit trouvé.</p>
-    @endforelse
+@forelse($products as $product)
+        <li><strong>{{ $product->name}}</strong>
+        <li>Description: {{ $product->description}} </li>
+        <li>Price: {{ $product->price}}€ </li>
+        <li>Stock: {{ $product->stock}} </li>
+@empty
+<p>Aucun produit trouvé.</p>
+@endforelse
 </ul>
 @endsection
 

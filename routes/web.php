@@ -17,8 +17,8 @@ Route::get('/app', [PageController::class, 'app'])
 
 use App\Http\Controllers\ProductController;
 
-Route::get('/products/{id}', [ProductController::class, 'show'])
-->name('products.show');
+Route::get('/product/{id}', [ProductController::class, 'show'])
+->name('product.show');
 
 Route::get('/index', [ProductController::class, 'index'])
 ->name('index');
