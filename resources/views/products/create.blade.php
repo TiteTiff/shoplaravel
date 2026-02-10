@@ -13,7 +13,6 @@
 <h1 class="text-2xl font-bold mb-6">New Product</h1>
 
 <form action="{{ route('products.store') }}" method="POST" class="max-w-lg">
-    @method('PUT')
     @csrf
     <div class="mb-4">
         <label for="category_id" class="block font-medium mb-1">Category ID</label>
