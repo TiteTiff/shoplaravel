@@ -16,7 +16,7 @@
     @csrf
     <div class="mb-4">
         <label for="category_id" class="block font-medium mb-1">Category ID</label>
-        <input type="number" max="5" name="category_id" id="category_id"
+        <input type="number" min="0" max="5" name="category_id" id="category_id"
            value="{{ old('category_id') }}"
            class="w-full border rounded px-3 py-2"
            required>
