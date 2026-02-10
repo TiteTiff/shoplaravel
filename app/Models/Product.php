@@ -9,10 +9,13 @@ class Product extends Model
 {
     //use HasFactory;
     protected $fillable = [
+        'category_id',
         'name',
         'slug',
         'description',
+        'price',
         'stock',
+        'active',
         'created_at',
         'updated_at',
     ];
@@ -22,8 +25,4 @@ class Product extends Model
         'active' => 'boolean',
     ];
 
-   protected $guarded = [
-       'id',
-       'category_id'
-    ];
 }

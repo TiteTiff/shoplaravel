@@ -17,6 +17,17 @@
 
 <main class="container mx-auto py-8">
     @yield('content')
+    @if(session('success'))
+        <div class="alert alert-success" class="bg-green-100 text-green-800 p-4 rounded mb-4">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if(session('error'))
+        <div class="alert alert-error" class="bg-red-100 text-red-800 p-4 rounded mb-4">
+            {{ session('error') }}
+        </div>
+    @endif
 </main>
 </body>
 <footer class="bg-gray-800 text-white p-4 mt-8">

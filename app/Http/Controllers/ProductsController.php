@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ProductsController extends Controller
 {
@@ -19,6 +20,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
+        //$categories = Category::all();
         return view('products/create');
     }
 
@@ -27,7 +29,18 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Product::create([
+            'category_id' => $request->category_id,
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'description' => $request->description,
+            'price' => $request->price,
+            'stock' => $request->stock,
+            'created_at' => $request->created_at,
+            'active' => $request->active,
+        ]);
+        return redirect()->route('index')
+            ->with('success', 'Produit créé avec succès !');
     }
 
     /**
