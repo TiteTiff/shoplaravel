@@ -54,24 +54,37 @@ class ProductsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Product $product)
     {
-        //
+        return view('products/edit', compact('product'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Product $product)
     {
-        //
+        $product->update([
+            'category_id' => $request->category_id,
+            'name' => $request->name,
+            'slug' => $request->slug,
+            'description' => $request->description,
+            'price' => $request->price,
+            'stock' => $request->stock,
+            'updated_at' => $request->updated_at,
+            'active' => $request->active,
+        ]);
+        return redirect()->route('index')
+            ->with('success', 'Produit modifié avec succès !');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect()->route('index')
+           ->with('Success', 'Produit supprimé avec succès !');
     }
 }

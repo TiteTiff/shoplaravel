@@ -7,28 +7,29 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
+@if(session('success'))
+    <div class="alert alert-success" class="bg-green-100 text-green-800 p-4 rounded mb-4">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-error" class="bg-red-100 text-red-800 p-4 rounded mb-4">
+        {{ session('error') }}
+    </div>
+@endif
 <header class="bg-blue-600 text-white p-4">
     <nav class="container mx-auto">
         <a href="{{ route('home') }}" class="font-bold text-xl">PoleWear</a>
         <a href="{{ route('index') }}" class="ml-4">Produits</a>
         <a href="{{ route('about') }}" class="ml-4">À propos</a>
     </nav>
-</header>
 
+</header>
 <main class="container mx-auto py-8">
     @yield('content')
-    @if(session('success'))
-        <div class="alert alert-success" class="bg-green-100 text-green-800 p-4 rounded mb-4">
-            {{ session('success') }}
-        </div>
-    @endif
-
-    @if(session('error'))
-        <div class="alert alert-error" class="bg-red-100 text-red-800 p-4 rounded mb-4">
-            {{ session('error') }}
-        </div>
-    @endif
 </main>
+
 </body>
 <footer class="bg-gray-800 text-white p-4 mt-8">
     <div class="container mx-auto text-center">
