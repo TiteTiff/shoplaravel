@@ -6,16 +6,14 @@
 
 
 
-<ul>
-@forelse($products as $product)
-        <li><strong>{{ $product->name}}</strong>
-        <li>Description: {{ $product->description}} </li>
-        <li>Price: {{ $product->price}}€ </li>
-        <li>Stock: {{ $product->stock}} </li>
-@empty
-<p>Aucun produit trouvé.</p>
-@endforelse
-</ul>
+<br>
+    @foreach($products as $product)
+        <p><br><strong>{{ $product-> name }}</strong> - Category: <em>{{ $product->category->name }}</em>
+        <br>
+        Price: {{ $product['price']}} €
+        </p>
+    @endforeach
+
 @endsection
 
 
