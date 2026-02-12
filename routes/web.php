@@ -23,8 +23,14 @@ Route::get('/product/{id}', [ProductController::class, 'show'])
 Route::get('/index', [ProductController::class, 'index'])
 ->name('index');
 
+use App\Http\Controllers\CategoryController;
+
+Route::get('/category/{id}', [CategoryController::class, 'show'])
+    ->name('category.show');
+
 use App\Http\Controllers\ProductsController;
 
 Route::resource('products', ProductsController::class);
 //URLs: products.index, .store, .create, .show, .update, .destroy, .edit
+
 
