@@ -10,7 +10,7 @@ class Category extends Model
 {
     //use HasFactory;
 
-    protected $id = 'id';
+
     protected $fillable = [
         'name',
         'slug',
@@ -19,8 +19,6 @@ class Category extends Model
         'updated_at',
     ];
 
-    protected $guarded = [
-        'id'];
 
 public function products(): HasMany
 {

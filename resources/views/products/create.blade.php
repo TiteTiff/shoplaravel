@@ -15,12 +15,22 @@
 <form action="{{ route('products.store') }}" method="POST" class="max-w-lg">
     @csrf
     <div class="mb-4">
-        <label for="category_id" class="block font-medium mb-1">Category ID</label>
-        <input type="number" min="0" max="5" name="category_id" id="category_id"
-           value="{{ old('category_id') }}"
-           class="w-full border rounded px-3 py-2"
-           required>
+        <label for="category name" class="block font-medium mb-1">Category Name</label>
+        <select class="w-full border rounded px-3 py-2" name="category name" id="category name" required>
+            <option value="">Choose a category</option>
+            @foreach($categories as $category)
+                <option value=" {{$category->name}} "> {{$category->name}} </option>
+            @endforeach
+        </select>
     </div>
+
+    <div class="mb-4">
+        <label for="category_id" class="block font-medium mb-1">Category_id</label>
+        <input type="number" min="0" max="5" name="category_id" id="category_id"
+               value="{{ old('category_id') }}"
+               class="w-full border rounded px-3 py-2"
+               required>
+
     <div class="mb-4">
         <label for="name" class="block font-medium mb-1">Name</label>
         <input type="text" name="name" id="name"

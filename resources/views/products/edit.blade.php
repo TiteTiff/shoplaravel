@@ -9,6 +9,17 @@
     @method('PUT')
 
     <div class="mb-4">
+        <label for="category_id" class="block font-medium mb-1">Category Name</label>
+        <select class="w-full border rounded px-3 py-2" name="category_id" id="category_id" required>
+            <option value="">Choose a category</option>
+            @foreach($categories as $category)
+                <option value=" {{ $category->id }}" @selected(old('category_id', $product->category_id) == $category->id)> {{$category->name}} </option>
+            @endforeach
+        </select>
+
+    </div>
+
+    <div class="mb-4">
         <label for="category_id">Category ID</label>
         <input type="number" min="0" max="5" name="category_id" value="{{ old('category_id', $product->category_id) }}">
     </div>
