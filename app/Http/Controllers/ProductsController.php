@@ -31,16 +31,16 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create([
-            'category_id' => $request->category_id,
-            'name' => $request->name,
-            'slug' => $request->slug,
-            'description' => $request->description,
-            'price' => $request->price,
-            'stock' => $request->stock,
-            'created_at' => $request->created_at,
-            'active' => $request->active,
+        $validated=$request->validate([
+            'category_id'=> 'required|numeric|min:0|max:5|exists:categories,id',
+            'name'=> 'required|string|max:255',
+            'slug'=> 'required|string|max:255',
+            'description'=> 'required|string|max:255',
+            'price'=> 'required|numeric|min:1',
+            'stock'=> 'required|numeric',
+            'active'=> 'boolean',
         ]);
+        Product::create($validated);
         return redirect()->route('index')
             ->with('success', 'Produit créé avec succès !');
     }
