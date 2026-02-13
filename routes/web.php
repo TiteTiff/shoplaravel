@@ -28,6 +28,23 @@ use App\Http\Controllers\CategoryController;
 Route::get('/category/{id}', [CategoryController::class, 'show'])
     ->name('category.show');
 
+use App\Http\Controllers\CartController;
+
+Route::get('/cart.index', [CartController::class, 'showCart'])
+    ->name('cart.index');
+
+Route::put('/cart.add', [CartController::class, 'addToCart'])
+    ->name('cart.add');
+
+Route::patch('/cart.update', [CartController::class, 'updateCart'])
+    ->name('cart.update');
+
+Route::put('/cart.remove', [CartController::class, 'removeFromCart'])
+    ->name('cart.remove');
+
+Route::delete('/cart.delete', [CartController::class, 'clearCart'])
+    ->name('cart.delete');
+
 use App\Http\Controllers\ProductsController;
 
 Route::resource('products', ProductsController::class);
